@@ -18,15 +18,91 @@
   color: white;
 }
 
+body{
+  background-color: aliceblue;
+}
+
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Navbar li{
+  display: inline-block;
+  list-style-type: none;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Navbar{
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
   }
-}
+
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+  li a:hover {
+    background-color: #111;
+  }
+
+  .header button{
+    position: relative;
+    top: -40px;
+    left: -10px;
+    float: right;
+    }
+
+  .header input{
+    float: right;
+    background-image: ('/img/searchicon.png'); 
+    background-position: 10px 12px;
+    background-repeat: no-repeat; 
+    width: 10%;
+    font-size: 10px; 
+    padding: 6px 10px 12px 20px; 
+    border: 1px solid rgb(0, 0, 0); 
+    margin-bottom: 10px; 
+  }
+
+  .header a{
+    position: relative;
+    top: -20px;
+    left: 130px;
+  }
+
+  .absenceForm {
+    /* border: 2px solid rgb(0, 0, 0);  */
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  .absenceForm input{
+    float: left;
+    position: relative;
+    left: 400px;
+    top: 8px;
+
+  }
+
+  .absenceForm li{
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+  }
+
+  .absenceForm select{
+    float: left;
+    position: relative;
+    width: 170px;
+    left: 400px;
+    top: 8px;
+  }

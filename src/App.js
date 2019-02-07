@@ -1,26 +1,59 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Navbar from './Navbar';
+import Header from './header';
+import AbsenceForm from './AbsenceForm';
+import AbsenceDropdown from './AbsenceDropdown';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+  constructor() {
+    super();
+    
+    this.state = {
+      dropdownOption: "Select an Option...",
+      formField1: "Further Details",
+      formField2: "Absence Code",
+      formField3: "Manager",
+      formField4: "Date From (DD/MM/YYYY)",
+      formField5: "Date Until (DD/MM/YYYY)",
+      formResponse: " "
+    }
+  
+
+  this.updateState = (result) => {
+    if (result === "true"){
+      this.setState({
+        formResponse: "Absence Form has been submitted"
+      })
+    }
+    else{
+      this.setState({
+        formResponse: "Please complete all form fields"
+      })
+    }
+  }
+
+
+  }
+
+  render(){
+    return(
+    <div>
+        <Header></Header>
+        <Navbar></Navbar>
+        <AbsenceDropdown>
+         placeHolder={this.state.dropdownOption}
+        </AbsenceDropdown>
+        <AbsenceForm
+          field1Prop={this.state.formField1}
+          field2Prop={this.state.formField2}
+          field3Prop={this.state.formField3}
+          field4Prop={this.state.formField4}
+          field5Prop={this.state.formField5}
+          responseProp={this.state.formResponse}
+          updateResponse={this.updateState}
+        ></AbsenceForm>
+    </div>
     );
   }
 }
